@@ -14,6 +14,7 @@ Inclusive talks is a youth-specific blog dedicated to promoting diversity and in
   - [Peter Eziagor](https://github.com/ChinonyeremGit): Project Manager And Back-End Developer
   - [Divine Obido](https://github.com/divine-cell): Front-End Developer
   - [Hillary Chikendu](https://github.com/ChikenduHillary): Back-End Developer
+  - [Perfrect Ewim](): Social Media Manager
 
 ## Site Structure
   ### Languages And Frameworks Used
