@@ -1,10 +1,20 @@
-const navMenu = document.querySelector(".nav-menu")
-const links = navMenu.getElementsByClassName("nav-link")
+const hambugerMenu = document.querySelector(".hambuger-menu")
+const navMenu = document.querySelector(".nav-menu") 
+const closeBtn = document.querySelector(".close-button")
 
-for(let i = 0; i > navLink.length; i++) {
-    links[i].addEventListener("click", function() {
-        let current = document.getElementsByClassName("active")
-        current[0].className = current[0].className.replace("active", "")
-        this.className += "active"
+hambugerMenu.addEventListener("click", () =>{
+    navMenu.classList.toggle("active")
+})
+
+closeBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active")
+})
+
+
+const questions = document.querySelectorAll(".the-questions")
+
+    questions.forEach(questions => {
+        questions.addEventListener("click", () => {
+            questions.classList.toggle("active");
     })
-}
+})
