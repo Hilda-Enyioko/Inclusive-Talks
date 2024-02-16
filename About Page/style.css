@@ -109,6 +109,7 @@ border-bottom: none;
     border-radius: 5px;
     color: #FFF3EE;
     letter-spacing: 1.5px;
+    cursor: pointer;
 }
 
 .about-page-hero {
@@ -117,6 +118,7 @@ border-bottom: none;
     align-items: center;
     margin: 86px;
     margin-top: -50px;
+
 }
 
 .hero-col1 {
@@ -144,8 +146,8 @@ border-bottom: none;
     width: 90%;
 }
 .hero-col2 img {
-    margin-top: -50px;
-    width: 100%;
+    margin-top: -40px;
+    width: 90%;
 }
     
 /* -----------ABOUT US ---------*/
@@ -403,6 +405,60 @@ border-bottom: none;
     transition: transform 0.3s ease-in-out;
 }
 
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: rotateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: rotateY(0px);
+    }
+}
+
+#subscribe-section {
+    width: 70%;
+    margin: 50px auto;
+    padding-top: 50px;
+    
+}
+
+.subscribe-card {
+    background-color: #DA9;
+    color: #FAE9DF;
+    padding: 50px 30px;
+}
+
+.subscribe h2 {
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.subscribe p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+input  {
+  width: 60%;
+  padding: 8px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+#sub-btn {
+    margin-top: 12px;
+}
+
+.questions i.active .answers {
+    max-height: 300px;
+    transition: 0.5s;
+}
+
+/*------- FOOTER --------*/
+
 footer {
     background-color: #9E4021;
 }
@@ -519,23 +575,6 @@ margin-top: 10px;
 padding-bottom: 10px;
 }
 
-@keyframes fade {
-    from {
-        opacity: 0;
-        transform: rotateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: rotateY(0px);
-    }
-}
-
-
-.questions i.active .answers {
-    max-height: 300px;
-    transition: 0.5s;
-}
-
 
 @media screen and (max-width: 767px){
     .logo img {
@@ -551,7 +590,6 @@ padding-bottom: 10px;
         border-bottom: none;
         padding-left: 10px;
     }
-
 
     .nav-menu {
         display: block;
@@ -593,13 +631,16 @@ padding-bottom: 10px;
         transform: translateY(-10px) rotate(-45deg);
     }
 
-
     li:hover, .active {
         border-bottom: none;
     }
 
     .nav-menu button {
         display: none;
+    }
+
+    .info-aboutus-sections {
+        margin-top: 100px;
     }
     
     .about-page-hero {
@@ -610,7 +651,7 @@ padding-bottom: 10px;
 
     .hero-col1 {
         width: 100%;
-        min-width: 200px;
+        /* min-width: 200px; */
     }
 
     .hero-col1 h1 {
@@ -631,7 +672,8 @@ padding-bottom: 10px;
     }
 
     .hero-col2 {
-        width: 100%;
+        width: 85%;
+        margin: 0 auto;
     }
 
     .hero-col2 img {
@@ -654,7 +696,8 @@ padding-bottom: 10px;
     }
 
     .info-aboutus-col2{
-        width: 100%;
+        width: 85%;
+        margin: 0 auto;
     }
 
     .info-aboutus h1 {
@@ -720,7 +763,7 @@ padding-bottom: 10px;
     }
 
     .team-lead img {
-        width: 85%;
+        width: 74%;
     }
 
     .team-lead p {
@@ -749,7 +792,7 @@ padding-bottom: 10px;
 
     .team-members img {
         margin-top: 70px;
-        width: 85%;
+        width: 75%;
     }
 
     .sponsors {
@@ -759,6 +802,33 @@ padding-bottom: 10px;
     .sponsors h2 {
         font-size: 30px;
         font-weight: 800;
+    }
+
+    #sec-4-text {
+        margin: 0px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .subscribe p {
+        font-size: 17px;
+        width: 100%;
+    }
+
+    #subscribe-section {
+        width: 100%;
+        margin-bottom: 0;
+        margin-top: -55px;
+    }
+
+    input {
+        width: 90%;
+        padding: 8px;
+        font-size: 18px;
+    }
+
+    #sub-btn {
+        width: 90%;
     }
 
     .faq {
@@ -801,7 +871,7 @@ padding-bottom: 10px;
     }
 
     .footer-col1 {
-        width: 50%;
+        width: 70%;
         line-height: 25px;
     }
 
@@ -817,7 +887,7 @@ padding-bottom: 10px;
     }
     
     .about-links1 {
-        margin-top: 50%;
+        margin-top: 50px;
         line-height: 25px;
         width: 100%;
     }
@@ -854,4 +924,114 @@ padding-bottom: 10px;
         width: 50%;
         font-size: 12px;
     }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1026px){
+    .logo img{
+      padding-left: 20px ;
+    }
+
+    nav {
+        padding:10px;
+    }
+
+    .about-page-hero {
+      margin: 40px ;
+    }
+
+    .hero-col2 {
+        width: 100%;
+    }
+
+    .hero-col2 img{
+        width: 100%;
+    }
+
+    .about {
+        background: rgb(241, 207, 197);
+    }
+
+    .info-aboutus-sections {
+        margin: 0;
+    }
+
+    .info-aboutus {
+        margin-left: 0%;
+        padding: 20px;
+        margin-bottom: 20px;
+
+    }
+
+    .info-aboutus-col1 p {
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .info-aboutus2 {
+        margin-right: 0%;
+        padding: 20px;
+        margin: 50px 0;
+    }
+
+    .info-aboutus2-col1 p {
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .info-aboutus-col1 h1 {
+        width: 100%;
+    }
+
+    .info-aboutus2-col1 h1 {
+        width: 100%;
+        margin-left: -40px;
+    }
+
+    .info-aboutus-col1 .aboutus-header3 {
+        width: 100%;
+    }
+
+    .team p {
+        font-size: 15px;
+    }
+
+
+    .faq h3 { 
+        font-size: 30px;
+    }
+
+    .questions p {
+        font-size: 20px;
+    }
+
+    .questions i {
+        font-size: 25px;
+    }
+
+
+    #subscribe-section {
+        width: 100%;
+        margin-bottom: -50px;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .footer-col1 {
+        width: 60%;
+    }
+
+    .links {
+        gap: 50px;
+    }
+    
+
+    .about-links {
+        width: 100%;
+        line-height: 30px;
+        margin-top: 25px;
+    } 
+
+
 }
