@@ -2,7 +2,7 @@
 Inclusive talks is a youth-specific blog dedicated to promoting diversity and inclusion.
 
 ## About Us
-  ![Inclusive Talks Logo](images/inclusive-talks-logo-(2).png)
+  ![Inclusive Talks Logo](./inclusive-talks-logo.png)
 
   Inclusive Talks is a youth-specific blog dedicated to promoting diversity and inclusion. We serve as a voice for youths who are faced with discrimination.
 
