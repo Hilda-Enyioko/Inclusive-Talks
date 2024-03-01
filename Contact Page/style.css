@@ -44,6 +44,38 @@ li {
     list-style: none;
 }
 
+.nav-link:hover, .active {
+    cursor: pointer;
+    padding-bottom: 1px;
+    border-bottom: 2px solid #9E4021;
+}
+
+#hamburger-menu {
+    display: none;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    margin-top: -20px;
+}
+
+#close-button {
+    display: none;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: 80%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    margin: 5px auto;
+    background-color: #9E4021;
+    border-radius: 10px;
+}
+
 .cta-button {
     color: #fff3ee;
     background-color: #9e4021;
@@ -329,4 +361,121 @@ hr {
 .copyright-text {
     margin: 0 auto;
     text-align: center;
+}
+
+@media screen and (max-width:767px) {
+    nav {
+        border-bottom: none;
+    }
+
+    #logo img {
+        padding-left: 0;
+        width: 70%;
+        height: 80%;
+    }
+
+    #hamburger-menu, #close-button {
+        display: block;
+    }
+
+
+    .nav-menu {
+        display: block;
+        position: fixed;
+        padding-top: 20px;
+        width: 100%;
+        height: 100vh;
+        font-weight: 600;
+        line-height: 40px;
+        background-color: #FAE9DF;
+        text-align: center;
+        font-size: 18px;
+        transition: 1s;
+        left: 100%;
+        top: 0%;
+    }
+
+    .nav-menu.active {
+        left: 0%;
+    }
+
+    .nav-link:hover, .active {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        margin-bottom: 10px;
+    }
+
+    #close-button .bar:first-child {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    #close-button .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #close-button .bar:last-child {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    #hero-section {
+        margin: 20px;
+    }
+
+    #hero-text {
+        width: 100%;
+    }
+
+    #hero-text h1 {
+        font-size: 50px;
+        width: 100%;
+    }
+
+    #hero-text p {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    #hero-image {
+        display: none;
+    }
+
+    #subscribe-section {
+        width: 100%;
+        margin-bottom: 0;
+        border-radius: 0;
+        height: fit-content;
+    }
+
+    #subscribe-card {
+        width: 80%;
+        margin: 50px auto;
+        padding: 0;
+    }
+
+    #subscribe-title {
+        font-size: 25px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #subscribe-text {
+        font-size: 16px;
+        width: 100%;
+        line-height: 30px;
+        margin-bottom: 15px;
+    }
+
+    #input-email {
+        width: 100%;
+        font-size: 18px;
+        border-radius: 0;
+        margin-bottom: 15px;
+    }
+
+    #subscribe-card .cta-button {
+        width: 100%;
+        margin-top: 5px;
+    }
 }
