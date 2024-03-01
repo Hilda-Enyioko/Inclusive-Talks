@@ -97,6 +97,13 @@ border-bottom: 2px solid #9E4021;
 text-decoration-color: #9E4021;
 }
 
+li:hover {
+    cursor: pointer;
+    padding-bottom: 1px;
+    border-bottom: 2px solid #9E4021;
+    text-decoration-color: #9E4021;
+}
+
 .nav-menu {
 border-bottom: none;
 }
@@ -299,6 +306,7 @@ input  {
 
 #sub-btn {
     margin-top: 12px;
+    
 }
 
 footer {
@@ -311,6 +319,10 @@ footer {
     justify-content: space-between;
     align-items: start;
     color: #FFF3EE;
+}
+
+.footer-col1 {
+    margin-left: 70px;
 }
 
 .footer-logo img{
