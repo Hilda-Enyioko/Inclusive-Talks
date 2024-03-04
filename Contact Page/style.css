@@ -1,7 +1,9 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -12,5 +14,468 @@ body {
 nav {
     width: 100%;
     height: 119px;
-    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 4px solid #fff3ee;
+}
+
+#logo img {
+    width: 90%;
+    padding-left: 50px;
+}
+
+.nav-menu {
+    width: 600px;
+    display: flex;
+    justify-items: centre;
+    justify-content: space-evenly;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+.nav-link:hover, .active {
+    cursor: pointer;
+    padding-bottom: 1px;
+    border-bottom: 2px solid #9E4021;
+}
+
+#hamburger-menu {
+    display: none;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    margin-top: -20px;
+}
+
+#close-button {
+    display: none;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: 80%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    margin: 5px auto;
+    background-color: #9E4021;
+    border-radius: 10px;
+}
+
+.cta-button {
+    color: #fff3ee;
+    background-color: #9e4021;
+    padding: 7px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    border-radius: 5px;
+    border: none;
+}
+
+#hero-section {
+    display: flex;
+    margin: 60px 86px 86px;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+#hero-text {
+    width: 50%;
+}
+
+#hero-text h1 {
+    font-size: 70px;
+    font-weight: 900;
+    width: 40%;
+    color: #833200;
+}
+
+#hero-text p {
+    width: 90%;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+#hero-image {
+    width: 45%;
+}
+
+#hero-image img {
+    width: 90%;
+    height: 100%;
+}
+
+#partnership {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 0;
+    justify-items: center;
+    align-items: center;
+}
+
+#partnership-title {
+    font-size: 30px;
+    font-weight: 900;
+    margin: 10px auto;
+}
+
+#partnership-image {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#partnership-image div {
+    width: 300px;
+    height: 270px;
+    border: 15px solid #9e4021;
+    border-radius: 25px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+#partnership-image div img {
+    width: 95%;
+    height: 95%;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+#partnership-text {
+    width: 60%;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 100px;
+    font-size: 17px;
+}
+
+#partnership-text h3 {
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+.mail-button {
+    background-color: #9e4021;
+    color: #fae9df;
+    border: none;
+    border-radius: 25px;
+    width: 270px;
+    height: 30px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+}
+
+.cta-button:hover, .mail-button:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px 8px #b1693d;
+}
+
+#connect {
+    background-color: rgba(221, 170, 153, 0.5);
+    width: 40%;
+    height: 300px;
+    margin: 0 auto;
+    color: #833200;
+    padding: 10px;
+}
+
+#connect-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin: 10px auto;
+    text-align: center;
+}
+
+#networks {
+    line-height: 50px;
+    margin: 0 70px;
+    text-decoration: underline;
+}
+
+.connect-icons {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #833200;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+    
+#subscribe-section {
+    background-color: #da9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 70%;
+    height: 300px;
+    margin: 50px auto;
+    border-radius: 5px;
+    line-height: 40px;
+    color: #fff;
+}
+
+#subscribe-card {
+    padding: 30px 20px 20px 50px;
+}
+
+#subscribe-title {
+    font-size: 1.5rem;
+}
+
+#subscribe-text {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#input-email {
+    width: 500px;
+    height: 35px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: none;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+input:focus {
+    outline: none;;
+}
+
+footer {
+    width: 100%;
+    background-color: #9e4021;
+    color: #fff3ee;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 300px 20px 70px;
+    line-height: 40px;
+}
+
+.main-link, .support-links {
+    align-self: flex-start;
+}
+
+.support-links {
+    margin-top: 30px;
+}
+
+.mail-link a:hover, .support-links a:hover {
+    text-decoration: underline;
+}
+
+#footer-logo img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-header {
+    font-size: 1.5rem;
+}
+
+.footer-icons {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #FFF3EE;
+    display: inline-flex;
+    color: #FFF3EE;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    margin-right: 0.5rem;
+}
+
+.footer-icons.instagram-icon:hover, .connect-icons.instagram-icon:hover {
+    color: white;
+    background-image: linear-gradient(to right, #feda75,  #ee2a7b,  #6228d7 );
+    transition: 0.3s;
+    border: none;
+}
+
+.footer-icons.twitter-icon:hover, .connect-icons.twitter-icon:hover {
+    color: #1DA1F2;
+    background-color: #fff;
+    transition: 0.3s;
+    border-color: white;
+}
+
+.footer-icons.youtube-icon:hover, .connect-icons.youtube-icon:hover {
+    color: #FF0000;
+    background-color: #fff;
+    transition: 0.3s;
+    border-color: white;
+}
+
+.footer-icons.threads-icon:hover {
+    color: white;
+    background-color: black;
+    transition: 0.3s;
+    border-color: black;
+}
+
+.connect-icons.facebook-icon:hover {
+    color: white;
+    background-color: #3b5998;
+    border-color: #3b5998;
+    transition: 0.3s;
+}
+
+hr {
+    margin: 20px 0 0;
+    border: 0;
+    height: 2px;
+    background-color: #fff3ee;
+}
+
+.copyright {
+    margin: 10px auto;
+}
+
+.copyright-text {
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media screen and (max-width:767px) {
+    nav {
+        border-bottom: none;
+    }
+
+    #logo img {
+        padding-left: 0;
+        width: 70%;
+        height: 80%;
+    }
+
+    #hamburger-menu, #close-button {
+        display: block;
+    }
+
+
+    .nav-menu {
+        display: block;
+        position: fixed;
+        padding-top: 20px;
+        width: 100%;
+        height: 100vh;
+        font-weight: 600;
+        line-height: 40px;
+        background-color: #FAE9DF;
+        text-align: center;
+        font-size: 18px;
+        transition: 1s;
+        left: 100%;
+        top: 0%;
+    }
+
+    .nav-menu.active {
+        left: 0%;
+    }
+
+    .nav-link:hover, .active {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        margin-bottom: 10px;
+    }
+
+    #close-button .bar:first-child {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    #close-button .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #close-button .bar:last-child {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    #hero-section {
+        margin: 20px;
+    }
+
+    #hero-text {
+        width: 100%;
+    }
+
+    #hero-text h1 {
+        font-size: 50px;
+        width: 100%;
+    }
+
+    #hero-text p {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    #hero-image {
+        display: none;
+    }
+
+    #subscribe-section {
+        width: 100%;
+        margin-bottom: 0;
+        border-radius: 0;
+        height: fit-content;
+    }
+
+    #subscribe-card {
+        width: 80%;
+        margin: 50px auto;
+        padding: 0;
+    }
+
+    #subscribe-title {
+        font-size: 25px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #subscribe-text {
+        font-size: 16px;
+        width: 100%;
+        line-height: 30px;
+        margin-bottom: 15px;
+    }
+
+    #input-email {
+        width: 100%;
+        font-size: 18px;
+        border-radius: 0;
+        margin-bottom: 15px;
+    }
+
+    #subscribe-card .cta-button {
+        width: 100%;
+        margin-top: 5px;
+    }
 }
