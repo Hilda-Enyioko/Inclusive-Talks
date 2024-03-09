@@ -555,7 +555,7 @@ footer {
         gap: 10px;
         display: flex;
         flex-direction: column-reverse;
-        /* text-align: ; */
+        text-align: center ;
     }
 
     .mission-img img {
