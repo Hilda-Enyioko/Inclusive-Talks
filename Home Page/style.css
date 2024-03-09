@@ -619,6 +619,7 @@ footer {
     .footer-col1 {
         width: 70%;
         line-height: 25px;
+        margin: 20px;
     }
 
     .footer-logo img {
