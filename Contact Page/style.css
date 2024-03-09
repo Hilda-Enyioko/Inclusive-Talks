@@ -44,6 +44,10 @@ li {
     list-style: none;
 }
 
+.nav-link {
+    transition: border-bottom, 300ms;
+}
+
 .nav-link:hover, .active {
     cursor: pointer;
     padding-bottom: 1px;
@@ -146,7 +150,7 @@ li {
 #partnership-image div {
     width: 300px;
     height: 270px;
-    border: 15px solid #9e4021;
+    border: 12px solid #9e4021;
     border-radius: 25px;
     display: flex;
     justify-items: center;
@@ -274,25 +278,42 @@ footer {
     display: flex;
     justify-content: space-between;
     margin: 30px 300px 20px 70px;
+    padding: 0 40px;
     line-height: 40px;
 }
 
-.main-link, .support-links {
+.main-link, .support-link {
     align-self: flex-start;
 }
 
-.support-links {
+.support-link {
+    display: flex;
     margin-top: 30px;
+    width: 70%;
+    justify-content: space-around;
+}
+
+.support-links {
+    width: 35%;
+}
+
+.mail-link a, .support-links a {
+    transition: text-decoration-color 300ms;
 }
 
 .mail-link a:hover, .support-links a:hover {
-    text-decoration: underline;
+    text-decoration: underline 0.1em rgba(14, 0, 0, 0);
+    text-decoration-color: #fff;
+}
+
+.mail-link {
+    font-size: 15px;
 }
 
 #footer-logo img {
     width: 200px;
     height: 200px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .footer-header {
@@ -368,6 +389,10 @@ hr {
         border-bottom: none;
     }
 
+    #logo {
+        margin-left: -20px;
+    }
+
     #logo img {
         padding-left: 0;
         width: 70%;
@@ -420,7 +445,10 @@ hr {
     }
 
     #hero-section {
+        width: 95%;
         margin: 20px;
+        flex-direction: column;
+        gap: 30px;
     }
 
     #hero-text {
@@ -438,12 +466,64 @@ hr {
     }
 
     #hero-image {
-        display: none;
+        width: 90%;
+        align-self: center;
+    }
+
+    #hero-image img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    #partnership {
+        width: 100%;
+    }
+
+    #partnership-title {
+        font-size: 25px;
+    }
+
+    #partnership-image {
+        width: 85%;
+    }
+
+    #partnership-image div {
+        width: 180px;
+        height: 160px;
+        border: 6px solid #9e4021;
+        border-radius: 20px;
+    }
+
+    #partnership-text{
+        width: 80%;
+    }
+
+
+    #partnership-text h3 {
+        font-size: 22px;
+    }
+
+    .mail-button {
+        font-size: 13px;
+    }
+
+    #connect {
+        width: 100%;
+        height: fit-content;
+    }
+
+    #connect-title {
+        font-size: 25px;
+        margin: 30px auto 20px;
+    }
+
+    #networks {
+        margin-bottom: 50px;
     }
 
     #subscribe-section {
         width: 100%;
-        margin-bottom: 0;
+        margin: 0;
         border-radius: 0;
         height: fit-content;
     }
@@ -478,4 +558,42 @@ hr {
         width: 100%;
         margin-top: 5px;
     }
+
+    .footer-links {
+        margin: 30px 15px 20px 15px;
+    }
+
+    .footer-links a, .footer-parts p {
+        font-size: 14px;
+    }
+
+    #footer-logo img {
+        width: 50%;
+        height: 50%;
+        min-width: 100px;
+        min-height: 100px;
+    }
+
+    #footer-logo{
+        margin-bottom: 103px;
+    }
+
+    .footer-header {
+        font-size: 20px;
+    }
+
+    .mail-link {
+        font-size: 12px;
+    }
+
+    .support-link {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .support-links {
+        width: 100%;
+        line-height: 30px;
+    }
+
 }
