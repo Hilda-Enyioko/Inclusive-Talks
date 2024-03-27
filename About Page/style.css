@@ -140,6 +140,10 @@ li:hover {
     width: 20%;
 }
 
+.hero-col2 h1 {
+    display: none;
+}
+
 .hero-col1 p {
     color: #9E4021;
     font-size: 20px;
@@ -441,7 +445,7 @@ li:hover {
 
 .subscribe-card {
     background-color: #DA9;
-    color: #FAE9DF;
+    color: #fff;
     padding: 50px 30px;
 }
 
@@ -664,7 +668,8 @@ padding-bottom: 10px;
     }
     
     .about-page-hero {
-        display: block;
+        display: flex;
+        flex-direction: column-reverse;
         margin: 20px;
         text-align: center;
     }
@@ -677,9 +682,18 @@ padding-bottom: 10px;
     .hero-col1 h1 {
         width: 90%;
         text-align: center;
-        font-size: 36px;
+        font-size: 50px;
         font-weight: 800;
-        
+        display: none;
+    }
+
+    .hero-col2 h1 {
+        width: 90%;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 800;
+        color: #833200;
+        display: block;
     }
 
     .hero-col1 p {
@@ -698,7 +712,7 @@ padding-bottom: 10px;
 
     .hero-col2 img {
         width: 100%;
-        margin-top: 5px;
+        margin-top: -30px;
     }  
     .info-aboutus{
         display: block;
@@ -838,7 +852,7 @@ padding-bottom: 10px;
     #subscribe-section {
         width: 100%;
         margin-bottom: 0;
-        margin-top: -55px;
+        margin-top: 0px;
     }
 
     input {
@@ -893,6 +907,7 @@ padding-bottom: 10px;
     .footer-col1 {
         width: 70%;
         line-height: 25px;
+        margin: 20px;
     }
 
     .footer-logo img {
@@ -910,6 +925,10 @@ padding-bottom: 10px;
         margin-top: 50px;
         line-height: 25px;
         width: 100%;
+    }
+
+    .about-links a {
+        font-size: 13px;
     }
 
     .about-links {
@@ -967,9 +986,9 @@ padding-bottom: 10px;
         width: 100%;
     }
 
-    .about {
+    /* .about {
         background: rgb(241, 207, 197);
-    }
+    } */
 
     .info-aboutus-sections {
         margin: 0;
