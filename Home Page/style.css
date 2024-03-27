@@ -565,7 +565,7 @@ footer {
 
     .our-mission p {
         font-size: 18px;
-        line-height: normal;
+        line-height: 30px;
     }
 
     .sec-4-text {
@@ -649,6 +649,10 @@ footer {
         font-size: 20px;
         font-weight: 800;
         letter-spacing: 1.4px;
+    }
+
+    .about-links a {
+        font-size: 13px;
     }
 
     .rounded-icons {
