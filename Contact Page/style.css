@@ -117,6 +117,7 @@ li {
     line-height: 40px;
     font-weight: 400;
     letter-spacing: 0.2px;
+    margin-top: 30px;
 }
 
 #hero-text .cta-button{
@@ -198,6 +199,7 @@ li {
 .cta-button:hover, .mail-button:hover {
     cursor: pointer;
     box-shadow: 1px 2px 8px #b1693d;
+    transition: 1s;
 }
 
 #connect {
