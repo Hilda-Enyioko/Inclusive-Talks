@@ -90,11 +90,29 @@ li {
     border: none;
 }
 
+.send-button {
+    background-color: #9e4021;
+    color: #fae9df;
+    border: none;
+    border-radius: 25px;
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+}
+
+.cta-button:hover, .send-button:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px 8px #b1693d;
+    transition: 1s;
+}
+
 .nav-menu .cta-button {
     margin-top: -7px;
 }
 
-#hero-section, .programs {
+#hero-section, .sections {
     display: flex;
     margin: 60px 86px 86px;
     justify-content: space-between;
@@ -142,7 +160,7 @@ li {
 
 .section-card {
     width: 90%;
-    margin: 30px auto;
+    margin: 40px 40px 40px 86px;
     display: flex;
 }
 
@@ -328,4 +346,242 @@ hr {
 .copyright-text {
     margin: 0 auto;
     text-align: center;
+}
+
+@media screen and (max-width:767px) {
+    nav {
+        border-bottom: none;
+    }
+
+    #logo {
+        margin-left: -20px;
+    }
+
+    #logo img {
+        padding-left: 0;
+        width: 70%;
+        height: 80%;
+    }
+
+    #hamburger-menu, #close-button {
+        display: block;
+    }
+
+
+    .nav-menu {
+        display: block;
+        position: fixed;
+        padding-top: 20px;
+        width: 100%;
+        height: 100vh;
+        font-weight: 600;
+        line-height: 40px;
+        background-color: #FAE9DF;
+        text-align: center;
+        font-size: 18px;
+        transition: 1s;
+        left: 100%;
+        top: 0%;
+    }
+
+    .nav-menu.active {
+        left: 0%;
+    }
+
+    .nav-menu .cta-button {
+        display: none;
+    }
+
+    .nav-link:hover, .active {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        margin-bottom: 10px;
+    }
+
+    .nav-link:hover {
+        opacity: 0.6;
+    }
+
+    #close-button .bar:first-child {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    #close-button .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #close-button .bar:last-child {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    #hero-section, .section-card {
+        width: 95%;
+        margin: 20px;
+        flex-direction: column;
+    }
+
+    #hero-text, .section-text {
+        width: 100%;
+    }
+
+    #hero-text h1, .section-text h1 {
+        font-size: 50px;
+        width: 100%;
+    }
+
+    #hero-text br, .section-text br {
+        display: none;
+    }
+
+    #hero-text p, .section-text p, .section-text li {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    #hero-image {
+        display: none;
+    }
+
+    #section1 {
+        margin-top: 50px;
+    }
+
+    .section-card {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    .section-text h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    #subscribe-section {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        height: fit-content;
+    }
+
+    #subscribe-card {
+        width: 80%;
+        margin: 50px 30px;
+        padding: 0;
+    }
+
+    #subscribe-title {
+        font-size: 25px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #subscribe-text {
+        font-size: 16px;
+        width: 100%;
+        line-height: 30px;
+        margin-bottom: 15px;
+    }
+
+    #input-email {
+        width: 100%;
+        font-size: 18px;
+        border-radius: 0;
+        margin-bottom: 15px;
+    }
+
+    #subscribe-card .cta-button {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .footer-links {
+        margin: 30px 15px 20px 15px;
+    }
+
+    .footer-links a, .footer-parts p {
+        font-size: 15px;
+    }
+
+    #footer-logo img {
+        width: 50%;
+        height: 50%;
+        min-width: 100px;
+        min-height: 100px;
+    }
+
+    .main-link .footer-header{
+        margin-top: 120px;
+    }
+
+    .footer-header {
+        font-size: 20px;
+    }
+
+    .mail-link {
+        font-size: 12px;
+    }
+
+    .support-link {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+
+    .support-links {
+        width: 100%;
+        margin-top: 40px;
+        line-height: 30px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1026px) {
+    nav {
+        padding: 10px;
+    }
+
+    #logo img{
+        padding-left: 20px;
+    }
+
+    #hero-section {
+        margin: 50px;
+    }
+
+    #hero-text {
+        width: 60%;
+    }
+
+    #hero-image {
+        margin-top: 110px;
+    }
+
+    #hero-image img {
+        width: 100%;
+        height: 60%;
+    }
+
+    #subscribe-section {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        height: fit-content;
+    }
+
+    #subscribe-card {
+        width: 80%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 30px;
+        padding: 0;
+    }
+
+    .footer-links {
+        margin: 30px 0px 20px 70px;
+    }
+
+    .support-links {
+        line-height: 30px;
+        margin-top: 40px;
+    }
 }

@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    transition: ease-in-out;
 }
 
 body {
@@ -90,11 +91,29 @@ li {
     border: none;
 }
 
+.send-button {
+    background-color: #9e4021;
+    color: #fae9df;
+    border: none;
+    border-radius: 25px;
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+}
+
+.cta-button:hover, .send-button:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px 8px #b1693d;
+    transition: 1s;
+}
+
 .nav-menu .cta-button {
     margin-top: -7px;
 }
 
-#hero-section, .programs {
+#hero-section, .sections {
     display: flex;
     margin: 60px 86px 86px;
     justify-content: space-between;
@@ -142,7 +161,7 @@ li {
 
 .section-card {
     width: 90%;
-    margin: 30px auto;
+    margin: 40px 40px 40px 86px;
     display: flex;
 }
 
@@ -374,12 +393,20 @@ hr {
         left: 0%;
     }
 
+    .nav-menu .cta-button {
+        display: none;
+    }
+
     .nav-link:hover, .active {
         border-bottom: none;
     }
 
     .nav-link {
         margin-bottom: 10px;
+    }
+
+    .nav-link:hover {
+        opacity: 0.6;
     }
 
     #close-button .bar:first-child {
@@ -413,7 +440,7 @@ hr {
         display: none;
     }
 
-    #hero-text p, .section-text p {
+    #hero-text p, .section-text p, .section-text li {
         font-size: 18px;
         width: 100%;
     }
@@ -431,7 +458,7 @@ hr {
         padding-bottom: 40px;
     }
 
-    .program-text h1 {
+    .section-text h1 {
         font-size: 40px;
         margin-bottom: 20px;
     }
@@ -445,7 +472,7 @@ hr {
 
     #subscribe-card {
         width: 80%;
-        margin: 50px auto;
+        margin: 50px 30px;
         padding: 0;
     }
 

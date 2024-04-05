@@ -434,12 +434,16 @@ hr {
         left: 0%;
     }
 
+    .nav-menu .cta-button {
+        display: none;
+    }
+
     .nav-link:hover, .active {
         border-bottom: none;
     }
 
-    .nav-link {
-        margin-bottom: 10px;
+    .nav-link:hover {
+        opacity: 0.6;
     }
 
     #close-button .bar:first-child {
@@ -538,7 +542,7 @@ hr {
 
     #subscribe-card {
         width: 80%;
-        margin: 50px auto;
+        margin: 50px 30px;
         padding: 0;
     }
 
