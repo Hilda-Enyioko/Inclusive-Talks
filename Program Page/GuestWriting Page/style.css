@@ -170,6 +170,14 @@ li {
     color: #9e4021;
 }
 
+
+#section2 .section-text a, #section1 .section-text a{
+    transition: 0.5s;
+  }
+
+#section2 .section-text a:hover, #section1 .section-text a:hover {
+  opacity: 0.7;
+}
 #section4 .section-text {
     width: 100%;
 }
