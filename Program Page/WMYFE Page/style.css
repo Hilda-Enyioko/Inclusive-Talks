@@ -177,6 +177,22 @@ li {
     font-size: 50px;
 }
 
+#section2 ul {
+    margin-top: 30px;
+}
+
+.sections li {
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    list-style: square;
+}
+
+.send-button:hover {
+    transition: 0.5s;
+}
+
 #subscribe-section {
     background-color: #da9;
     display: flex;

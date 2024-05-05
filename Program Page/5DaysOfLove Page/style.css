@@ -189,6 +189,10 @@ li {
     font-size: 50px;
 }
 
+.send-button:hover {
+    transition: 0.5s;
+}
+
 #subscribe-section {
     background-color: #da9;
     display: flex;
