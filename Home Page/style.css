@@ -85,8 +85,7 @@ li {
 color: #9E4021;
 font-size: 18px;
 margin-top: 5px;
-text-decoration: 0.1em rgba(14, 0, 0, 0);
-transition: 300ms;
+transition: 90ms;
 
 }
 
@@ -302,6 +301,7 @@ input  {
   border: none;
   outline: none;
   margin-bottom: 15px;
+  border-radius: 3px;
 }
 
 #sub-btn {

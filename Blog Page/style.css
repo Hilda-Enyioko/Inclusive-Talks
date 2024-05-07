@@ -84,8 +84,7 @@ li {
     color: #9E4021;
     font-size: 18px;
     margin-top: 5px;
-    text-decoration: 0.1em rgba(14, 0, 0, 0);
-    transition: 300ms;
+    transition: 90ms;
 
 }
 
@@ -184,6 +183,10 @@ form {
     margin-bottom: 20px;
 }
 
+.post-text a {
+    color: #833200;
+}
+
 .blog-post h2 {
     font-size: 50px;
     font-weight: 600;
@@ -267,6 +270,7 @@ input  {
   border: none;
   outline: none;
   margin-bottom: 15px;
+  border-radius: 3px;
 }
 
 #sub-btn {
@@ -457,6 +461,76 @@ footer {
     .nav-menu button {
         display: none;
     }
+
+
+   .blog-hero {
+        margin: 20px;
+    }
+
+   .blog-hero h1 {
+        width: 100%;
+        font-size: 50px;
+    }
+
+    form {
+        position: static;
+    }
+
+   
+   .blog-hero input[type ="text"] {
+      padding: 10px;
+      font-size: 17px;
+      margin-top: 0px;
+    }
+
+    .blog-hero button {
+        /* position: static; */
+        display: none;
+        position: fixed;
+        width: 25px;
+        height: 25px;
+        float: right;
+        margin-right: 10%;
+        margin-top: 100px;
+        background-color: transparent;
+    }
+
+    ::placeholder {
+        font-size: 17px;
+    }
+
+    .blog-post {
+       padding: 20px;
+    }
+
+    .blog-post h1 {
+        font-size: 40px;
+    }
+
+    .blog-post h2 {
+        font-size: 25px;
+    }
+
+    .post {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 0px;
+    }
+
+    .post-text p {
+        margin: 20px;
+    }
+    
+
+
+
+
+
+
+
+
+
+
 
 
     .subscribe p {
