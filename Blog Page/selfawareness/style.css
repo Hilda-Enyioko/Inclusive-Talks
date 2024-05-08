@@ -149,6 +149,25 @@ li:hover {
     margin-top: 15px;
 }
 
+audio {
+    margin: 0 70px;
+    width: 89%;
+    border: 2px solid #9E4021;
+    border-radius: 50px;
+    color: #9E4021;
+    margin-top: -20px;
+}
+
+
+audio::-webkit-media-controls-panel {
+  background-color: #FAE9DF;
+  color: #9E4021 !important;
+}
+
+audio::-webkit-media-controls-play-button {
+  color: #9E4021 !important;
+}
+
 .blog-hero p {
     font-size: 25px;
     color: #fff;
@@ -567,6 +586,12 @@ footer {
         height: auto;
     }
 
+    audio {
+        width: 90%;
+        margin-top: 0;
+        margin: 0 20px;
+    }
+
     .blog-hero p {
         width: 50%;
         font-size: 15px;
@@ -601,6 +626,7 @@ footer {
     .share-icons i{
         font-size: 18px;
         margin-right: 5px;
+        cursor: pointer;
     }
 
     .comment-section {
