@@ -6,6 +6,10 @@
     scroll-behavior: smooth;
 }
 
+a:hover {
+    cursor: pointer;
+}
+
 body {
     background-color: #fae9df;
     color: #9e4021;
@@ -90,11 +94,17 @@ li {
     border: none;
 }
 
+.cta-button:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px 8px #b1693d;
+    transition: 1s;
+}
+
 .nav-menu .cta-button {
     margin-top: -7px;
 }
 
-#hero-section {
+#hero-section, .programs {
     display: flex;
     margin: 60px 86px 86px;
     justify-content: space-between;
@@ -105,13 +115,13 @@ li {
     width: 50%;
 }
 
-#hero-text h1 {
+#hero-text h1, .program-text h1 {
     font-size: 70px;
     font-weight: 900;
     color: #833200;
 }
 
-#hero-text p {
+#hero-text p, .program-text p {
     width: 90%;
     font-size: 20px;
     line-height: 40px;
@@ -133,108 +143,28 @@ li {
     height: 80%;
 }
 
-#partnership {
+.programs {
+    background-color: rgb(241, 207, 197);
+    width: 100%;
+    margin: 0 0 50px;
+    padding: 0;
+}
+
+.program-card {
+    width: 90%;
+    margin: 30px auto;
     display: flex;
-    flex-direction: column;
-    margin: 50px auto 0;
-    justify-items: center;
-    align-items: center;
 }
 
-#partnership-title {
-    font-size: 30px;
-    font-weight: 900;
-    margin: 10px auto;
-}
-
-#partnership-image {
+.program-text {
     width: 60%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    color: #9e4021;
 }
 
-#partnership-image div {
-    width: 300px;
-    height: 270px;
-    border: 12px solid #9e4021;
-    border-radius: 25px;
-    display: flex;
-    justify-items: center;
-    align-items: center;
+.program-text h1 {
+    font-size: 50px;
 }
 
-#partnership-image div img {
-    width: 95%;
-    height: 95%;
-    border-radius: 10px;
-    margin: 0 auto;
-}
-
-#partnership-text {
-    width: 60%;
-    text-align: center;
-    line-height: 40px;
-    margin-bottom: 100px;
-    font-size: 17px;
-}
-
-#partnership-text h3 {
-    font-size: 25px;
-    margin-top: 25px;
-}
-
-.mail-button {
-    background-color: #9e4021;
-    color: #fae9df;
-    border: none;
-    border-radius: 25px;
-    width: 270px;
-    height: 30px;
-    font-size: 15px;
-    letter-spacing: 1.5px;
-}
-
-.cta-button:hover, .mail-button:hover {
-    cursor: pointer;
-    box-shadow: 1px 2px 8px #b1693d;
-    transition: 1s;
-}
-
-#connect {
-    background-color: rgba(221, 170, 153, 0.5);
-    width: 40%;
-    height: 300px;
-    margin: 0 auto;
-    color: #833200;
-    padding: 10px;
-}
-
-#connect-title {
-    font-size: 1.6rem;
-    font-weight: 900;
-    margin: 10px auto;
-    text-align: center;
-}
-
-#networks {
-    line-height: 50px;
-    margin: 0 70px;
-    text-decoration: underline;
-}
-
-.connect-icons {
-    width: 32px;
-    height: 32px;
-    border: 1px solid #833200;
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-}
-    
 #subscribe-section {
     background-color: #da9;
     display: flex;
@@ -442,6 +372,10 @@ hr {
         border-bottom: none;
     }
 
+    .nav-link {
+        margin-bottom: 10px;
+    }
+
     .nav-link:hover {
         opacity: 0.6;
     }
@@ -458,14 +392,13 @@ hr {
         transform: translateY(-10px) rotate(-45deg);
     }
 
-    #hero-section {
+    #hero-section, .program-card {
         width: 95%;
         margin: 20px;
         flex-direction: column;
-        gap: 30px;
     }
 
-    #hero-text {
+    #hero-text, .program-text {
         width: 100%;
     }
 
@@ -478,7 +411,7 @@ hr {
         display: none;
     }
 
-    #hero-text p {
+    #hero-text p, .program-text p {
         font-size: 18px;
         width: 100%;
     }
@@ -487,50 +420,18 @@ hr {
         display: none;
     }
 
-    #partnership {
-        width: 100%;
+    #program1 {
+        margin-top: 50px;
     }
 
-    #partnership-title {
-        font-size: 25px;
+    .program-card {
+        padding-top: 20px;
+        padding-bottom: 40px;
     }
 
-    #partnership-image {
-        width: 85%;
-    }
-
-    #partnership-image div {
-        width: 180px;
-        height: 160px;
-        border: 6px solid #9e4021;
-        border-radius: 20px;
-    }
-
-    #partnership-text{
-        width: 80%;
-    }
-
-
-    #partnership-text h3 {
-        font-size: 22px;
-    }
-
-    .mail-button {
-        font-size: 13px;
-    }
-
-    #connect {
-        width: 100%;
-        height: fit-content;
-    }
-
-    #connect-title {
-        font-size: 25px;
-        margin: 30px auto 20px;
-    }
-
-    #networks {
-        margin-bottom: 50px;
+    .program-text h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
     }
 
     #subscribe-section {
@@ -576,7 +477,7 @@ hr {
     }
 
     .footer-links a, .footer-parts p {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     #footer-logo img {
@@ -586,8 +487,8 @@ hr {
         min-height: 100px;
     }
 
-    #footer-logo{
-        margin-bottom: 120px;
+    .main-link .footer-header{
+        margin-top: 120px;
     }
 
     .footer-header {
@@ -600,7 +501,7 @@ hr {
 
     .support-link {
         flex-direction: column-reverse;
-        gap: 20px;
+        gap: 15px;
     }
 
     .support-links {
@@ -608,7 +509,6 @@ hr {
         margin-top: 40px;
         line-height: 30px;
     }
-
 }
 
 @media screen and (min-width:768px) and (max-width: 1026px) {
@@ -637,18 +537,6 @@ hr {
         height: 60%;
     }
 
-    #partnership-image div{
-        width: 220px;
-        height: 200px;
-        border-width: 8px;
-    }
-
-    #connect {
-        width: 60%;
-        height: 320px;
-        margin-bottom: 50px;
-    }
-
     #subscribe-section {
         width: 100%;
         margin: 0;
@@ -670,6 +558,6 @@ hr {
 
     .support-links {
         line-height: 30px;
-        margin-top: 10px;
+        margin-top: 40px;
     }
 }
