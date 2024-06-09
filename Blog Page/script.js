@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Iterate over the posts and create HTML for each post
       data.forEach((post) => {
         const postElement = document.createElement("div");
-        postElement.className = "blog-post";
+        postElement.className = "blog-section";
         postElement.innerHTML = `
         <div class="blog-post">
         <h1>Blog Posts</h1>
