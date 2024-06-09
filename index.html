@@ -55,7 +55,7 @@
               <div class="bar"></div>
               <div class="bar"></div>
             </div>
-            <a href="https://hilda-enyioko.github.io/Inclusive-Talks/"
+            <a href="https://www.inclusivetalks.org/"
               ><li class="nav-link active">Home</li></a
             >
             <a href="./Blog Page/blog.html"><li class="nav-link">Blog</li></a>
@@ -147,13 +147,6 @@
       </section>
       <!-- slider show section -->
       <section class="slide-section">
-        <!-- slider navigation button -->
-        <div class="slide-navigation-btn">
-          <input type="radio" name="slide" class="radio-btn" id="radio1" />
-          <input type="radio" name="slide" class="radio-btn" id="radio2" />
-          <input type="radio" name="slide" class="radio-btn" id="radio3" />
-        </div>
-
         <div class="slide-show">
           <!-- first slide -->
           <div class="slide">
@@ -164,26 +157,29 @@
               </h1>
             </div>
 
-            <div class="sliders">
-              <div class="slides main">
-                <h2 class="our-reach">2000+</h2>
-                <p class="slide-text">reach across all platforms</p>
+            <div class="slides-container">
+              <div class="sliders">
+                <div class="slides">
+                  <h2 class="our-reach">2000+</h2>
+                  <p class="slide-text">reach across all platforms</p>
+                </div>
+
+                <div class="slides">
+                  <h2 class="our-reach">150+</h2>
+                  <p class="slide-text">subscribers across all networks</p>
+                </div>
+
+                <div class="slides">
+                  <h2 class="our-reach">2500+</h2>
+                  <p class="slide-text">impact across the globe</p>
+                </div>
               </div>
-
-              <!-- <div class="slides">
-                            <h2 class="our-reach">150+</h2>
-                            <p class="slide-text">
-                            subscribers across all networks
-                        </p>
-                        </div>
-
-                        
-                        <div class="slides">
-                            <h2 class="our-reach">2500+</h2>
-                            <p class="slide-text">
-                                impact across the globe
-                            </p>
-                        </div> -->
+              <!-- slider navigation button -->
+              <div class="slide-navigation-btn">
+                <div class="radio-btn" id="radio1"></div>
+                <div class="radio-btn" id="radio2"></div>
+                <div class="radio-btn" id="radio3"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -253,6 +249,7 @@
               id="input-email"
               placeholder="Email address"
             /><br />
+            <div id="feedback" style="display: none; color: red"></div>
             <button class="cta-btn" id="sub-btn" type="button">
               SUBSCRIBE
             </button>
@@ -354,5 +351,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="subscribe.js"></script>
   </body>
 </html>
