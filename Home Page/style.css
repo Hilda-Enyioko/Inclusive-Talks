@@ -601,6 +601,11 @@ footer {
     li:hover, .active {
         border-bottom: none;
     }
+ 
+    li:hover {
+        opacity: 0.6;
+    }
+    
 
     .nav-menu button {
         display: none;
