@@ -17,3 +17,76 @@ questions.forEach((questions) => {
     questions.classList.toggle("active");
   });
 });
+
+// Fetching of blog post
+document.addEventListener("DOMContentLoaded", () => {
+  // Function to fetch posts from the API
+  async function fetchPosts() {
+    try {
+      // Send a GET request to the API endpoint
+      const response = await fetch(
+        "https://inclusive-talks.vercel.app/api/trpc/getAllPost"
+      );
+      console.log(response);
+
+      // Check if the request was successful
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Parse the JSON response
+      const res = await response.json();
+      console.log({ res });
+      const { data } = res.result;
+      console.log(data);
+
+      const postsContainer = document.getElementById("blog-container");
+      console.log(postsContainer);
+
+      function getFirst50Words(text) {
+        // Split the text into words
+        let words = text.split(/\s+/);
+
+        // Get the first 50 words
+        let first50Words = words.slice(0, 50);
+
+        // Join the first 50 words into a string
+        return first50Words.join(" ") + (words.length > 50 ? "..." : "");
+      }
+
+      // Iterate over the posts and create HTML for each post
+      data.forEach((post) => {
+        const postElement = document.createElement("div");
+        postElement.className = "blog-section";
+        postElement.innerHTML = `
+        <div class="blog-post">
+        <h1>Blog Posts</h1>
+        <h2>${post.title}</h2>
+
+        <div class="post">
+          <div class="post-text">
+            <h4>Written By: ${post.writtenBy}</h4>
+            <p>
+              ${getFirst50Words(post.text)}
+              <a href="../Blog Page/Gratitude for diversity/post.html"
+                >CONTINUE READING....</a
+              >
+            </p>
+          </div>
+
+          <div class="post-img">
+            <img src=${post.imgUrl} alt="" />
+          </div>
+        </div>
+      </div>
+                  `;
+        postsContainer.insertBefore(postElement, postsContainer.firstChild);
+      });
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+    }
+  }
+
+  // Call the fetchPosts function to load the posts when the page loads
+  fetchPosts();
+});
