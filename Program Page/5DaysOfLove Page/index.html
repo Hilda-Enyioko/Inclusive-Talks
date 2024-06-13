@@ -54,7 +54,7 @@
         <a href="../Programs_Main Page/index.html"
           ><li class="nav-link active">Programs</li></a
         >
-        <a href="../../About Page/index.html"
+        <a href="../../About Page/about.html"
           ><li class="nav-link">About Us</li></a
         >
         <a href="../../Contact Page/contact.html"
@@ -82,7 +82,7 @@
       >
     </div>
     <div id="hero-image">
-      <img alt="5 Days Of Love" src="images/hero-image.png" loading="active" />
+      <!-- <img alt="5 Days Of Love" src="images/hero-image.png" loading="active" /> -->
     </div>
   </section>
 
@@ -138,12 +138,13 @@
         notifications of new posts by email.
       </p>
       <input
-        type="email"
-        placeholder="Email address"
+        type="text"
         name=""
         id="input-email"
+        placeholder="Email address"
       /><br />
-      <button class="cta-button" type="button" action="">SUBSCRIBE</button>
+      <div id="feedback" style="display: none; color: red"></div>
+      <button class="cta-button" id="sub-btn" type="button">SUBSCRIBE</button>
     </div>
   </section>
 
@@ -193,7 +194,7 @@
           <a class="programs-link" href="../WMYFE Page/index.html"
             >What Makes You Feel Excluded?</a
           ><br />
-          <a class="programs-link" href="../GuestWriting Page/"
+          <a class="programs-link" href="../GuestWriting Page/index.html"
             >Become A Guest Writer</a
           ><br />
           <a class="programs-link" href="../5DaysOfLove Page/index.html"
@@ -224,4 +225,5 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script src="../../subscribe.js"></script>
 </body>

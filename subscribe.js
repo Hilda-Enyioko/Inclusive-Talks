@@ -15,8 +15,7 @@ document.getElementById("sub-btn").addEventListener("click", async () => {
   }
 
   try {
-    console.log(token);
-    feedback.textContent = "Loading...";
+    feedback.textContent = "Subscribing... 😊😍😘";
     feedback.style.color = "white";
     feedback.style.display = "block";
 

@@ -170,12 +170,13 @@
           notifications of new posts by email.
         </p>
         <input
-          type="email"
-          placeholder="Email address"
+          type="text"
           name=""
           id="input-email"
+          placeholder="Email address"
         /><br />
-        <button class="cta-button" type="button" action="">SUBSCRIBE</button>
+        <div id="feedback" style="display: none; color: red"></div>
+        <button class="cta-button" id="sub-btn" type="button">SUBSCRIBE</button>
       </div>
     </section>
 
@@ -265,5 +266,6 @@
     </footer>
 
     <script src="./script.js"></script>
+    <script src="../subscribe.js"></script>
   </body>
 </html>
