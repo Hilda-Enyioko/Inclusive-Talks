@@ -15,8 +15,7 @@ document.getElementById("sub-btn").addEventListener("click", async () => {
   }
 
   try {
-    console.log(token);
-    feedback.textContent = "Loading...";
+    feedback.textContent = "Subscribing... 😊😍😘";
     feedback.style.color = "white";
     feedback.style.display = "block";
 
@@ -35,7 +34,7 @@ document.getElementById("sub-btn").addEventListener("click", async () => {
 
     if (response.ok) {
       feedback.textContent =
-        "Subscription successful! Check your email for confirmation.";
+        "Subscription successful! You will get updates on your email";
       feedback.style.color = "green";
       feedback.style.display = "block";
       emailInput.value = ""; // Clear the input field

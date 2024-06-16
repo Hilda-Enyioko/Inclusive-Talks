@@ -40,10 +40,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const { data } = res.result;
       console.log(data);
 
-      const postsContainer = document.getElementById("posts-container");
+      const postsContainer = document.getElementById("blog-container");
+      console.log(postsContainer);
 
-      // Clear the container
-      postsContainer.innerHTML = "";
+      function getFirst50Words(text) {
+        // Split the text into words
+        let words = text.split(/\s+/);
+
+        // Get the first 50 words
+        let first50Words = words.slice(0, 50);
+
+        // Join the first 50 words into a string
+        return first50Words.join(" ") + (words.length > 50 ? "..." : "");
+      }
 
       // Iterate over the posts and create HTML for each post
       data.forEach((post) => {
@@ -58,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="post-text">
             <h4>Written By: ${post.writtenBy}</h4>
             <p>
-              ${post.text}
+              ${getFirst50Words(post.text)}
               <a href="../Blog Page/Gratitude for diversity/post.html"
                 >CONTINUE READING....</a
               >
@@ -71,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
                   `;
-        postsContainer.appendChild(postElement);
+        postsContainer.insertBefore(postElement, postsContainer.firstChild);
       });
     } catch (error) {
       console.error("Error fetching posts:", error);

@@ -45,7 +45,7 @@ li {
 }
 
 .nav-link {
-    transition: border-bottom, 300ms;
+    transition: border-bottom, 90ms;
 }
 
 .nav-link:hover, .active {
@@ -185,6 +185,13 @@ li {
     list-style: square;
 }
 
+.sections img {
+    width: 100%;
+    margin-top: 60px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 8px rgba(105, 104, 104, 0.5);
+}
+
 .section-text h1 {
     font-size: 50px;
 }
@@ -234,21 +241,20 @@ input:focus {
 }
 
 footer {
-    width: 100%;
     background-color: #9e4021;
-    color: #fff3ee;
-    display: flex;
-    flex-direction: column;
 }
 
 .footer-links {
     margin-top: 50px;
-    margin-left: 70px;
     padding: 40px;
-    padding-top: 0;
     display: flex;
     justify-content: space-between;
     align-items: start;
+    color: #fff3ee;
+}
+
+.main-link {
+    margin-left: 70px;
 }
 
 .support-link {
@@ -278,8 +284,8 @@ footer {
 }
 
 #footer-logo img {
-    width: 200px;
-    height: 200px;
+    width: 10%;
+    min-width: 200px;
     margin-top: 20px;
 }
 
@@ -345,11 +351,14 @@ hr {
 
 .copyright {
     margin: 10px auto;
+    margin-bottom: 0;
 }
 
 .copyright-text {
+    color: #FFF3EE;
     margin: 0 auto;
     text-align: center;
+    padding-bottom: 10px;
 }
 
 @media screen and (max-width:767px) {
@@ -453,6 +462,7 @@ hr {
     }
 
     .section-card {
+        flex-direction: column;
         padding-top: 20px;
         padding-bottom: 40px;
     }
@@ -460,6 +470,14 @@ hr {
     .section-text h1 {
         font-size: 40px;
         margin-bottom: 20px;
+    }
+
+    .section-image {
+        width: 100%;
+    }
+
+    #section1 .section-text {
+        width: 100%;
     }
 
     #subscribe-section {
@@ -501,41 +519,69 @@ hr {
     }
 
     .footer-links {
-        margin: 30px 15px 20px 15px;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        margin-top: 0;
+        margin-left: 0;
+        padding: 10px;
+        width: 100%;
+        gap: 25px;
     }
 
     .footer-links a, .footer-parts p {
-        font-size: 15px;
+        font-size: 13px;
     }
 
     #footer-logo img {
-        width: 50%;
-        height: 50%;
+        width: 70%;
         min-width: 100px;
-        min-height: 100px;
-    }
-
-    .main-link .footer-header{
-        margin-top: 120px;
     }
 
     .footer-header {
         font-size: 20px;
+        font-weight: 800;
+        letter-spacing: 1.4px;
+    }
+
+    .footer-socials {
+        margin-top: 50px;
+        line-height: 25px;
+        width: 100%;
+    }
+
+    .main-link {
+        width: 70%;
+        line-height: 25px;
+        margin: 20px;
     }
 
     .mail-link {
         font-size: 12px;
+        width: 50%;
     }
 
     .support-link {
+        display: flex;
         flex-direction: column-reverse;
-        gap: 15px;
+        margin-left: 0px;
+        width: 100%;
     }
 
     .support-links {
         width: 100%;
-        margin-top: 40px;
-        line-height: 30px;
+        line-height: 25px;
+        margin-top: 25px;
+    }
+
+    .footer-icons {
+        width: 25px;
+        height: 25px; 
+    }
+
+    i{
+        width: 18px;
+        text-align: center;
     }
 }
 
@@ -565,6 +611,19 @@ hr {
         height: 60%;
     }
 
+    .section-card {
+        flex-direction: column;
+        margin-left: 50px;
+    }
+
+    .section-image {
+        width: 100%;
+    }
+
+    .section-text {
+        width: 100%;
+    }
+
     #subscribe-section {
         width: 100%;
         margin: 0;
@@ -580,12 +639,22 @@ hr {
         padding: 0;
     }
 
-    .footer-links {
-        margin: 30px 0px 20px 70px;
+    footer {
+        width: 100%;
+    }
+
+    .main-link {
+        width: 60%;
+    }
+
+    .support-link {
+        gap: 50px
     }
 
     .support-links {
+        width: 100%;
         line-height: 30px;
-        margin-top: 40px;
+        margin-top: 25px; 
+    }
     }
 }
