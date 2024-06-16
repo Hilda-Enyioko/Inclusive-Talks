@@ -117,8 +117,7 @@ li {
   width: 50%;
 }
 
-#hero-text h1,
-.program-text h1 {
+#hero-text h1 {
   font-size: 70px;
   font-weight: 900;
   color: #833200;
@@ -156,17 +155,29 @@ li {
 
 .program-card {
   width: 90%;
-  margin: 30px auto;
+  margin: 40px 40px 40px 86px;
   display: flex;
+  flex-direction: column;
 }
 
-.program-text {
+.program-content {
+  display: flex;
+  margin: 0;
+}
+
+.program-text, .program-card h1 {
   width: 60%;
   color: #9e4021;
 }
 
-.program-text h1 {
+.program-card h1 {
   font-size: 50px;
+  font-weight: 900;
+  transition: 0.5s
+}
+
+.program-card h1:hover {
+  text-shadow: 0.5px 0.5px 1px #833200;
 }
 
 .illustration {
@@ -175,9 +186,12 @@ li {
 
 .illustration img {
   width: 100%;
-  margin-top: 60px;
   border-radius: 8px;
   box-shadow: 5px 5px 8px rgba(105, 104, 104, 0.5);
+}
+
+#program1 img {
+  margin-top: -30px;
 }
 
 #subscribe-section {
@@ -451,14 +465,26 @@ hr {
   }
 
   .program-card {
-    flex-direction: column;
     padding-top: 20px;
     padding-bottom: 40px;
   }
 
-  .program-text h1 {
+  .program-content {
+    flex-direction: column;
+  }
+
+  .program-card h1 {
     font-size: 40px;
     margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .program-card h1 br{
+    display: none;
+  }
+
+  .section-card h1 br{
+    display: none;
   }
 
   .program-text {
@@ -467,6 +493,11 @@ hr {
 
   .illustration {
     width: 100%;
+    margin-top: 25px;
+  }
+
+  #program1 img{
+    margin-top: 0;
   }
 
   #subscribe-section {
@@ -584,7 +615,7 @@ hr {
     padding-left: 20px;
   }
 
-  #hero-section {
+  #hero-section, .program-card {
     margin: 50px;
   }
 
@@ -601,16 +632,25 @@ hr {
     height: 60%;
   }
 
-  .program-card {
+  .program-content {
     flex-direction: column;
   }
 
-  .program-text {
+  .program-text, .program-card h1 {
     width: 100%;
+  }
+
+  .program-card h1 br{
+    display: none;
   }
 
   .illustration {
     width: 100%;
+    margin-top: 25px;
+  }
+
+  #program1 img{
+    margin-top: 0;
   }
 
   #subscribe-section {
