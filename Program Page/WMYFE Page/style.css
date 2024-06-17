@@ -167,9 +167,14 @@ li {
   width: 90%;
   margin: 40px 40px 40px 86px;
   display: flex;
+  flex-direction: column;
 }
 
-.section-text {
+.section-content {
+  display: flex;
+}
+
+.section-text, .section-card h1 {
   width: 60%;
   color: #9e4021;
 }
@@ -178,8 +183,9 @@ li {
   width: 100%;
 }
 
-.section-text h1 {
+.section-card h1 {
   font-size: 50px;
+  font-weight: 900;
 }
 
 #section2 ul {
@@ -196,7 +202,7 @@ li {
 
 .sections img {
   width: 100%;
-  margin-top: 60px;
+  margin-top: 30px;
   border-radius: 8px;
   box-shadow: 5px 5px 8px rgba(105, 104, 104, 0.5);
 }
@@ -479,22 +485,30 @@ hr {
   }
 
   .section-card {
-    flex-direction: column;
     padding-top: 20px;
     padding-bottom: 40px;
   }
 
-  .section-text h1 {
+  .section-card h1 {
     font-size: 40px;
-    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .section-card h1 br{
+    display: none;
+  }
+
+  .section-content {
+    flex-direction: column;
   }
 
   .section-image {
     width: 100%;
+    margin-top: 25px;
   }
 
-  #section1 .section-text {
-    width: 100%;
+  #section1 img {
+    margin-top: 0;
   }
 
   #subscribe-section {
@@ -630,17 +644,26 @@ hr {
   }
 
   .section-card {
-    flex-direction: column;
     margin-left: 50px;
+  }
+
+  .section-content {
+    flex-direction: column;
   }
 
   .section-image {
     width: 100%;
+    margin-top: 25px;
   }
 
-  #section1 .section-text {
+  .section-text, .section-card h1 {
     width: 100%;
   }
+
+  .section-card h1 br{
+    display: none;
+  }
+
 
   #subscribe-section {
     width: 100%;
