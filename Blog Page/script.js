@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch(
         "https://inclusive-talks.vercel.app/api/trpc/getAllPost"
       );
-      console.log(response);
 
       // Check if the request was successful
       if (!response.ok) {
@@ -36,12 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Parse the JSON response
       const res = await response.json();
-      console.log({ res });
       const { data } = res.result;
       console.log(data);
 
       const postsContainer = document.getElementById("blog-container");
-      console.log(postsContainer);
+      const postId = document.getElementById("blog-id");
 
       function getFirst50Words(text) {
         // Split the text into words
@@ -51,12 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let first50Words = words.slice(0, 50);
 
         // Join the first 50 words into a string
-        return first50Words.join(" ") + (words.length > 50 ? "..." : "");
+        return first50Words.join(" ") + (words.length > 50 ? "" : "");
       }
 
       // Iterate over the posts and create HTML for each post
-      data.forEach((post) => {
+      data.forEach((post, i) => {
         const postElement = document.createElement("div");
+
         postElement.className = "blog-section";
         postElement.innerHTML = `
         <div class="blog-post">
@@ -68,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <h4>Written By: ${post.writtenBy}</h4>
             <p>
               ${getFirst50Words(post.text)}
-              <a href="../Blog Page/Gratitude for diversity/post.html"
-                >CONTINUE READING....</a
+              <a href="../Blog Page/Blogpost/post.html"
+                onclick="setId(${post.id})">CONTINUE READING....</a
               >
             </p>
           </div>
@@ -82,6 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
                   `;
         postsContainer.insertBefore(postElement, postsContainer.firstChild);
       });
+      const setId = (id) => {
+        localStorage.setItem("blogId", id);
+        console.log("working");
+      };
     } catch (error) {
       console.error("Error fetching posts:", error);
     }
