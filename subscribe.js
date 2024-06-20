@@ -20,7 +20,7 @@ document.getElementById("sub-btn").addEventListener("click", async () => {
     feedback.style.display = "block";
 
     const response = await fetch(
-      "http://localhost:3000/api/trpc/createSubscribers",
+      "https://inclusive-talks.vercel.app/api/trpc/createSubscribers",
       {
         method: "POST",
         headers: {
@@ -30,8 +30,8 @@ document.getElementById("sub-btn").addEventListener("click", async () => {
       }
     );
 
-    console.log(response.body);
-    console.log(response.statusText);
+    console.log("body", response.body);
+    console.log("text", response.statusText);
 
     if (response.ok) {
       feedback.textContent =
@@ -39,15 +39,9 @@ document.getElementById("sub-btn").addEventListener("click", async () => {
       feedback.style.color = "green";
       feedback.style.display = "block";
       emailInput.value = ""; // Clear the input field
-    } else if (response.statusText == "Method Not Allowed") {
-      const errorData = await response.json();
-      feedback.textContent = "Email already exist";
-      feedback.style.color = "red";
-      feedback.style.display = "block";
     } else {
       const errorData = await response.json();
-      feedback.textContent =
-        errorData.message || "Subscription failed. Please try again.";
+      feedback.textContent = "Email already exist";
       feedback.style.color = "red";
       feedback.style.display = "block";
     }
