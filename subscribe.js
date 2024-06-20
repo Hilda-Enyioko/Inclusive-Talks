@@ -30,7 +30,8 @@ document.getElementById("sub-btn").addEventListener("click", async () => {
       }
     );
 
-    console.log(response);
+    console.log("body", response.body);
+    console.log("text", response.statusText);
 
     if (response.ok) {
       feedback.textContent =
@@ -38,18 +39,9 @@ document.getElementById("sub-btn").addEventListener("click", async () => {
       feedback.style.color = "green";
       feedback.style.display = "block";
       emailInput.value = ""; // Clear the input field
-    } else if (
-      response.statusText == "Bad Request" ||
-      response.statusText == ""
-    ) {
-      const errorData = await response.json();
-      feedback.textContent = errorData.message || "Email already exist";
-      feedback.style.color = "red";
-      feedback.style.display = "block";
     } else {
       const errorData = await response.json();
-      feedback.textContent =
-        errorData.message || "Subscription failed. Please try again.";
+      feedback.textContent = "Email already exist";
       feedback.style.color = "red";
       feedback.style.display = "block";
     }
