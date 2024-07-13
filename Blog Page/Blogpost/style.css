@@ -591,6 +591,10 @@ footer {
     display: none;
   }
 
+  .blog-read {
+    width: 90% auto;
+  }
+
   .share-icons {
     margin-left: 20px;
   }

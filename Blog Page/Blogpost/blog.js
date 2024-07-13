@@ -1,48 +1,92 @@
-const blogId = localStorage.getItem("blogId");
-console.log({ blogId });
+function getUrlParameter(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  const regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+  const results = regex.exec(location.search);
+  return results === null
+    ? ""
+    : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
 // Function to fetch a single blog post by ID from an API
 const fetchBlogPost = async (id) => {
-  // Replace this with your actual API endpoint
-  const response = await fetch(`https://api.example.com/blog/${id}`);
+  const response = await fetch(
+    `https://inclusive-talks.vercel.app/api/trpc/getBlogPost`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        blogId: id,
+      }),
+    }
+  );
+
   if (!response.ok) {
     throw new Error("Network response was not ok");
   }
-  const data = await response.json();
+
+  const {
+    result: { data },
+  } = await response.json();
   return data;
 };
 
 // Function to render the blog post
 const renderBlogPost = (post) => {
-  console.log("post", post);
-  //   const blogTitle = document.getElementById("blog-title");
-  //   const blogContainer = document.getElementById("blog-read");
-  //   const writtenDate = document.getElementById("written-date");
+  console.log(post);
+  document.getElementById("blog-title").textContent = post.title;
+  document.getElementById("author-link").textContent = post.writtenBy;
+  document.getElementById("date-written").textContent = new Date(
+    post.createdAt
+  ).toLocaleDateString();
+  document.getElementById("image").src = post.imgUrl;
 
-  //   // Set the blog title
-  //   blogTitle.textContent = post.title;
+  const audioSource = document.getElementById("audioSource");
 
-  //   // Create blog content
-  //   blogContainer.innerHTML = `
-  //       <div class="blog-post">
-  //         <h2>${post.title}</h2>
-  //         <p>${post.content}</p>
-  //         <p><strong>Author:</strong> ${post.author}</p>
-  //         <p><em>${new Date(post.date).toLocaleDateString()}</em></p>
-  //       </div>
-  //     `;
+  const audioUrl = post.audioUrl;
+  audioSource.src = audioUrl;
+
+  const audioPlayer = document.getElementById("audioPlayer");
+
+  audioPlayer.load();
+  document.getElementById("blog-read").innerHTML = post.content;
+
+  // Render comments
+  renderComments(post.comments || []); // Default to an empty array if comments are undefined
 };
 
-// Function to get the blog ID from the URL path
-const getBlogIdFromUrl = () => {
-  const pathParts = window.location.pathname.split("/");
-  console.log({ pathParts });
-  return pathParts[pathParts.length - 1]; // Get the last part of the path
+// Function to render comments
+const renderComments = (comments) => {
+  const commentsContainer = document.getElementById("comments-container");
+  commentsContainer.innerHTML = ""; // Clear existing comments
+
+  if (comments.length === 0) {
+    commentsContainer.innerHTML = "";
+  } else {
+    comments.forEach((comment) => {
+      const commentElement = document.createElement("div");
+      commentElement.classList.add("comment");
+      commentElement.innerHTML = `
+        <div class="profile">
+          <img src="images/image-colton.jpg" alt="" />
+          <div class="name">
+            <p class="date">${new Date(
+              comment.timeCreated
+            ).toLocaleDateString()}</p>
+          </div>
+        </div>
+        <p class="text">${comment.comment}</p>
+      `;
+      commentsContainer.appendChild(commentElement);
+    });
+  }
 };
 
 // Main function to fetch and render the blog post
 const initializeBlog = async () => {
-  const blogId = getBlogIdFromUrl();
+  const blogId = getUrlParameter("blogId");
+
   if (!blogId) {
     document.getElementById("blog-container").innerHTML =
       "<p>Blog post not found.</p>";
@@ -50,14 +94,22 @@ const initializeBlog = async () => {
   }
 
   try {
+    // Show loading indicator
+    document.getElementById("loading").style.display = "block";
+
     const blogPost = await fetchBlogPost(blogId);
     renderBlogPost(blogPost);
+
+    // Hide loading indicator and show blog container
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("blog-container").style.display = "block";
   } catch (error) {
     console.error("Error fetching the blog post:", error);
+    document.getElementById("loading").style.display = "none";
     document.getElementById("blog-container").innerHTML =
       "<p>Error loading blog post.</p>";
   }
 };
 
 // Initialize the blog on page load
-// window.addEventListener("DOMContentLoaded", initializeBlog);
+window.addEventListener("DOMContentLoaded", initializeBlog);
