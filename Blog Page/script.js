@@ -39,17 +39,45 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(data);
 
       const postsContainer = document.getElementById("blog-container");
-      const postId = document.getElementById("blog-id");
 
-      function getFirst50Words(text) {
-        // Split the text into words
-        let words = text.split(/\s+/);
+      function truncateContent(html, wordLimit) {
+        // Create a temporary DOM element to hold the content
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = html;
 
-        // Get the first 50 words
-        let first50Words = words.slice(0, 50);
+        let wordCount = 0;
+        let truncatedContent = "";
 
-        // Join the first 50 words into a string
-        return first50Words.join(" ") + (words.length > 50 ? "" : "");
+        function walk(node) {
+          // If it's a text node, process its text
+          if (node.nodeType === Node.TEXT_NODE) {
+            const words = node.nodeValue.split(/\s+/);
+            for (let word of words) {
+              if (wordCount < wordLimit) {
+                truncatedContent += word + " ";
+                wordCount++;
+              } else {
+                truncatedContent += "";
+                return false;
+              }
+            }
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            // If it's an element node, process its children
+            truncatedContent += `<${node.tagName.toLowerCase()}>`;
+            for (let child of node.childNodes) {
+              if (walk(child) === false) return false;
+            }
+            truncatedContent += `</${node.tagName.toLowerCase()}>`;
+          }
+          return true;
+        }
+
+        // Walk through the content nodes
+        for (let child of tempDiv.childNodes) {
+          if (walk(child) === false) break;
+        }
+
+        return truncatedContent;
       }
 
       // Iterate over the posts and create HTML for each post
@@ -66,8 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="post-text">
             <h4>Written By: ${post.writtenBy}</h4>
             <p>
-              ${getFirst50Words(post.text)}
-              <a href="../Blog Page/Blogpost/post.html"
+              ${truncateContent(post.content, 50)}
+              <a href="../Blog Page/Blogpost/post.html?blogId=${post.id}"
                 onclick="setId(${post.id})">CONTINUE READING....</a
               >
             </p>
@@ -92,4 +120,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Call the fetchPosts function to load the posts when the page loads
   fetchPosts();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const likeIcon = document.getElementById("like-icon");
+  const postId = "your-post-id"; // Replace with the actual post ID
+
+  // Fetch initial data (if needed)
+  fetchInitialData();
+
+  function fetchInitialData() {
+    updateLikeIcon();
+  }
+
+  function updateLikeIcon() {
+    const likedPosts = JSON.parse(localStorage.getItem("likedPosts")) || [];
+    if (likedPosts.includes(postId)) {
+      likeIcon.classList.add("liked");
+    } else {
+      likeIcon.classList.remove("liked");
+    }
+  }
+
+  likeIcon.addEventListener("click", () => {
+    const likedPosts = JSON.parse(localStorage.getItem("likedPosts")) || [];
+    if (likedPosts.includes(postId)) {
+      alert("You have already liked this post");
+      return;
+    }
+
+    // Add postId to likedPosts array
+    likedPosts.push(postId);
+    localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
+    updateLikeIcon();
+
+    // Update the post on the server
+    updatePost({ likes: 1 }); // Adjust the payload as needed
+  });
+
+  function updatePost(updateData) {
+    fetch(`/api/posts/${postId}/like`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updateData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Post updated successfully", data);
+      })
+      .catch((error) => {
+        console.error("Error updating post:", error);
+      });
+  }
 });

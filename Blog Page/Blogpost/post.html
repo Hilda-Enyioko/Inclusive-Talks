@@ -30,6 +30,47 @@
       src="https://kit.fontawesome.com/a076d05399.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      .loading {
+        display: none;
+        text-align: center;
+        font-size: 20px;
+        color: #555;
+      }
+      .blog-container {
+        display: none;
+      }
+
+      .button-loader {
+        border: 2px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 2px solid #833200;
+        width: 16px;
+        height: 16px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+        display: inline-block;
+        margin-left: 8px;
+      }
+
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -77,178 +118,81 @@
       </nav>
 
       <div class="main">
-        <div class="blog-hero">
-          <h1 id="blog-title">Religion: The Accidental Enemy</h1>
-          <h3 class="author">
-            written By:
-            <a href="https://www.instagram.com/kemuel_kefas_sinna/"
-              >Kemuel Kefas</a
-            >
-          </h3>
-          <h3>5 min read. <span id="date-written">June 15 2023</span></h3>
-          <img src="images/blogimg1.webp" alt="" id="image" />
-          <p>Photo Credit: Freepik</p>
-        </div>
+        <div class="loading" id="loading">Loading...</div>
+        <div class="blog-container" id="blog-container">
+          <div class="blog-hero">
+            <h1 id="blog-title">Religion: The Accidental Enemy</h1>
+            <h3 class="author" id="author-link">
+              written By:
+              <a href="https://www.instagram.com/kemuel_kefas_sinna/"
+                >Kemuel Kefas</a
+              >
+            </h3>
+            <h3>5 min read. <span id="date-written">June 15 2023</span></h3>
+            <img src="images/blogimg1.webp" alt="" id="image" />
+          </div>
 
-        <audio controls loop>
-          <source src="images/audio5.mp3" id="audio" />
-        </audio>
+          <audio controls loop id="audioPlayer">
+            <source id="audioSource" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
 
-        <div class="blog-read" id="blog-read">
-          <p>
-            Where I come from, the worst enemy is religion. Religion is simply a
-            set of principles that guides our way of life. Merriam-Webster
-            dictionary defines it as “an organized system of beliefs,
-            ceremonies, and rules used to worship a god or a group of gods”.
-            This singular institution has influenced and shaped not just the
-            beliefs and mindsets of people, but perhaps even the affairs of
-            nations. Religion plays an unfathomable role in the civilization and
-            development of nations, both in the past and present.
-          </p>
-
-          <p>
-            Religions achieve their influence either by directly affecting the
-            content of a nation’s constitution and laws, or indirectly by
-            influencing the individuals who are in power. Either way, people are
-            the vehicles used by religion to achieve such influence. Perhaps you
-            must have heard that “everything rises and falls with leadership”.
-            If you do, then we have something in common because I did too.
-            However, the disparity between us might be that I wanted to
-            understand what influences leadership and how it is administered. I
-            discovered that people are products of their mindsets. So are
-            leaders.<br /><br />
-            Mindset, according to the Merriam-Webster dictionary again, is “a
-            particular way of thinking: a person’s attitude or set of opinions
-            about something”. Imagine a rural settlement. Imagine this
-            settlement having pathways, some leading to the stream, some leading
-            to the marketplace, and some to the king’s palace. Now, imagine that
-            you want to go to the stream. There is a particular path that you
-            would take without having to think it through. Your friend as well,
-            from her house, would use a particular path to get to the stream.
-            You would not change your default path unless there is a need to.
-            The anecdote above is a representation of how the mind works. These
-            pathways are mindsets. We tend to have a particular way of thinking,
-            without proper consideration. It would be interesting to remind you
-            that mindsets are not inborn. They were acquired while growing
-            up.,<br /><br />
-            Cultures, beliefs, and sentiments that our parents or whoever raised
-            us had, form the basic foundation of these mindsets. These
-            foundations give us a framework to build upon, and most of the time
-            with limited adjustment. A child grows up to be more like his
-            parents, believing in what they believe and most likely practicing
-            the religion of his parents. I need to remind you that these beliefs
-            and religious norms that a child learns do not have to be true,
-            right, or generally good. It just has to be acceptable to the family
-            and at least a few people outside the family. Remember, the exposure
-            or educational status of the parent also is not relevant. This child
-            grows up and is sent into society to represent and portray all that
-            they have learned in their families and schools. We would be
-            fortunate if the child, who becomes a grown-up, was taught to
-            respect everyone, irrespective of their religious or political
-            affiliation.<br /><br />However, this grown-up becomes a threat to
-            peaceful coexistence when they are taught that two or more religions
-            are not meant to coexist. It becomes a threat to national unity when
-            individuals do not learn that our strength lies in our diversity,
-            not our uniformity. It even becomes worse when such a person
-            occupies a public office because they would have sentimental and
-            favorite tendencies.
-          </p>
-
-          <img src="images/blogimg2.jpg" alt="" />
-          <p class="credit">Photo Credit: Adobe Stock</p>
-
-          <p>
-            Elections into public offices, the appointment of government
-            officials, and even admission into institutions become compromised,
-            as favoritism is shown along religious lines. Merit and competence
-            are being forfeited for religious dominance and over mutual respect
-            among religions.<br /><br />
-            “Good” and “bad” become synonymous with “my religion” and “their
-            religion” as a result of misinformation that started in childhood.
-            Human beings are perceived not as such, but can be biased as a
-            result of their religious affiliation. This misinformation,
-            misunderstanding, and misinterpretation of religion have led to wars
-            that should not have been fought, losses that could have been
-            avoided, and pains that should never be felt. It costs the
-            government: resources, families: property, communities: harmony, and
-            individuals: their peace of mind.<br /><br />
-
-            The Covid-19 pandemic has come and gone. One thing I am glad about
-            is that it teaches us all a lesson. It teaches us a lesson that
-            there is a bigger enemy that does not differentiate between the
-            religious affiliation of its victims. It attacks without mercy, and
-            its sting pierces into the soul of anyone it can get without
-            religious bias. The pandemic has taught us that our strength lies,
-            not in our highlighted differences, but in our abilities to use our
-            unique diversity to devise sustainable means of defeating our bigger
-            enemies. These enemies are not just the pandemic, but also climate
-            change, global health issues, hunger, and poverty, among others. We
-            must learn that religion is not a tool for creating conflicts and
-            trampling over the fundamental human rights of others, but a medium
-            for aligning ourselves with a supernatural being that we have faith
-            in.<br /><br />
-            We must also, as a matter of urgency and for our good, understand
-            that at some points, religious leaders and their followers have
-            allowed their chauvinistic whims and caprices to cloud their
-            judgment about followers of other religions. This has, of course,
-            led to false and incomplete teachings that have misled many. I
-            believe no religion would choose its dominance over the safety of
-            its faithful. That is why we must desist from every form of violence
-            and sentiment that arises from religious teachings and poses a
-            threat to the peace and harmony that should exist among brothers and
-            sisters.<br /><br />
-            We must love one another just as we would love ourselves, and we
-            must learn to overcome the temptation of giving preferences to
-            people of the same religion as ourselves when we know that should
-            not be. We must learn rather to teach and encourage that which would
-            assist in qualifying the citizens of our nations, in the affairs
-            which they pursue. We must also learn that we are not safe when our
-            religion is safe, but when our nation is safe because that would
-            give us a wonderful avenue to practice our religion without any form
-            of fear or worry.
-          </p>
+          <div class="blog-read" id="blog-read" style="width: 95% auto"></div>
         </div>
 
         <div class="share-icons">
-          <i class="fa-regular fa-heart"></i>
-          <i class="fa-regular fa-comment-dots"></i>
-          <i class="fa-solid fa-arrow-up-from-bracket"></i>
+          <i class="fa-regular fa-heart" id="like-button"></i>
+          <i class="fa-regular fa-comment-dots" id="comment-icon"></i>
+          <i class="fa-solid fa-arrow-up-from-bracket" id="share-button"></i>
         </div>
 
         <section class="comment-section">
-          <div class="comment">
-            <div class="profile">
-              <img src="images/image-colton.jpg" alt="" />
-              <div class="name">
-                <p>John Doe</p>
-                <p class="date">Oct 9 2023</p>
+          <div id="comments-container">
+            <!-- <div class="comment">
+              <div class="profile">
+                <img src="images/image-colton.jpg" alt="" />
+                <div class="name">
+                  <p>John Doe</p>
+                  <p class="date">Oct 9 2023</p>
+                </div>
               </div>
+              <p class="text">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et quasi.
+              </p>
             </div>
-            <p class="text">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi.
-            </p>
+
+            <div class="comment">
+              <div class="profile">
+                <img src="images/image-colton.jpg" alt="" />
+                <div class="name">
+                  <p>John Doe</p>
+                  <p class="date">Oct 9 2023</p>
+                </div>
+              </div>
+              <p class="text">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et quasi.
+              </p>
+            </div> -->
           </div>
 
-          <div class="comment">
-            <div class="profile">
-              <img src="images/image-colton.jpg" alt="" />
-              <div class="name">
-                <p>John Doe</p>
-                <p class="date">Oct 9 2023</p>
-              </div>
-            </div>
-            <p class="text">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi.
-            </p>
-          </div>
-
-          <form action="">
-            <input type="text" placeholder="Write A comment" />
-            <button>Post</button>
+          <form action="" id="comment-form">
+            <input
+              type="text"
+              placeholder="Write a comment"
+              id="comment-input"
+            />
+            <button type="submit" id="comment-submit-button">
+              Post
+              <div
+                id="button-loader"
+                class="button-loader"
+                style="display: none"
+              ></div>
+            </button>
           </form>
         </section>
 
@@ -434,5 +378,9 @@
     </script>
     <script src="../../subscribe.js"></script>
     <script src="./blog.js"></script>
+    <script src="./like.js"></script>
+    <script src="./comment.js"></script>
+    <script src="./share.js"></script>
+    <script src="./view.js"></script>
   </body>
 </html>

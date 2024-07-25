@@ -591,6 +591,10 @@ footer {
     display: none;
   }
 
+  .blog-read {
+    width: 95% auto;
+  }
+
   .share-icons {
     margin-left: 20px;
   }
@@ -755,5 +759,9 @@ footer {
   .mail-link {
     width: 50%;
     font-size: 12px;
+  }
+
+  .blog-read {
+    margin: 0px;
   }
 }
