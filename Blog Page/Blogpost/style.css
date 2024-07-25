@@ -592,7 +592,7 @@ footer {
   }
 
   .blog-read {
-    width: 90% auto;
+    width: 95% auto;
   }
 
   .share-icons {
@@ -759,5 +759,9 @@ footer {
   .mail-link {
     width: 50%;
     font-size: 12px;
+  }
+
+  .blog-read {
+    margin: 0px;
   }
 }
