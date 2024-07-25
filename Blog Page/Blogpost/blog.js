@@ -70,7 +70,7 @@ const renderComments = (comments) => {
       commentElement.classList.add("comment");
       commentElement.innerHTML = `
         <div class="profile">
-          <img src="images/image-colton.jpg" alt="" />
+          <img src="images/image.png" style="width: 50px; height: 50px; background-color: #fff; alt="" />
           <div class="name">
             <p class="date">${new Date(
               comment.timeCreated
