@@ -89,8 +89,6 @@ li {
 .active {
   cursor: pointer;
   padding-bottom: 1px;
-  border-bottom: 2px solid #9e4021;
-  text-decoration-color: #9e4021;
 }
 
 li:hover {
@@ -227,12 +225,29 @@ li:hover {
   gap: 20%;
 }
 
+.manual-btn {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: lightgray; /* Default color */
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.manual-btn.active {
+  background-color: #9e4021; /* Active color */
+}
+
 .slide .header3 {
-  font-size: 40px;
+  font-size: 30px;
   color: #9e4021;
   font-weight: 900;
   width: 20%;
   margin-left: 40px;
+}
+
+.header3 {
 }
 
 .slide-p .our-reach {

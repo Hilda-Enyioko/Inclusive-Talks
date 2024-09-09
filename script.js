@@ -18,32 +18,40 @@ questions.forEach((questions) => {
   });
 });
 
-// slide show
-const slides = document.querySelectorAll(".slides");
-const radioButtons = document.querySelectorAll(".radio-btn");
-let currentSlide = 2;
+const slides = document.querySelectorAll(".slide");
+const radioButtons = document.querySelectorAll('input[name="radio-btn"]');
+const manualBtns = document.querySelectorAll(".manual-btn"); // Select manual buttons
+let currentSlide = 0;
 
 function showSlide(index) {
   slides.forEach((slide, i) => {
-    slide.classList.remove("active", "inactive");
-    radioButtons[i].classList.remove("active");
+    slide.classList.remove("active");
     if (i === index) {
       slide.classList.add("active");
-      radioButtons[i].classList.add("active");
-    } else if (i === (index + slides.length - 1) % slides.length) {
-      slide.classList.add("inactive");
+    }
+  });
+
+  radioButtons.forEach((radio, i) => {
+    radio.checked = i === index;
+  });
+
+  manualBtns.forEach((btn, i) => {
+    btn.classList.remove("active");
+    if (i === index) {
+      btn.classList.add("active");
     }
   });
 }
 
 function nextSlide() {
+  console.log("working");
   currentSlide = (currentSlide + 1) % slides.length;
   showSlide(currentSlide);
 }
 
 setInterval(nextSlide, 5000);
 
-radioButtons.forEach((btn, i) => {
+manualBtns.forEach((btn, i) => {
   btn.addEventListener("click", () => {
     currentSlide = i;
     showSlide(currentSlide);
