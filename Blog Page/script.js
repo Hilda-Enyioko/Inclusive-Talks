@@ -31,19 +31,20 @@ function displayPosts(posts) {
     const postElement = document.createElement("div");
     postElement.className = "blog-section";
 
-    // Highlight matched search terms in title and content
+    // Apply highlight to title, content, and writtenBy fields
     const highlightedTitle = highlightText(post.title, searchTerm);
     const highlightedContent = highlightText(
       truncateContent(post.content, 50),
       searchTerm
     );
+    const highlightedWrittenBy = highlightText(post.writtenBy, searchTerm);
 
     postElement.innerHTML = `
       <div class="blog-post">
         <h2>${highlightedTitle}</h2>
         <div class="post">
           <div class="post-text">
-            <h4>Written By: ${post.writtenBy}</h4>
+            <h4>Written By: ${highlightedWrittenBy}</h4>
             <p>
               ${highlightedContent}
               <a href="../Blog Page/Blogpost/post.html?blogId=${post.id}">CONTINUE READING....</a>
@@ -65,6 +66,7 @@ function truncateContent(content, wordLimit) {
     : content;
 }
 
+// Function to highlight search terms in text
 function highlightText(text, term) {
   if (!term) return text;
   const regex = new RegExp(`(${term})`, "gi");
@@ -73,11 +75,15 @@ function highlightText(text, term) {
 
 function filterPosts() {
   const searchTerm = document.getElementById("search-bar").value.toLowerCase();
+
+  // Filter based on title, content, or writtenBy fields
   const filteredPosts = allPosts.filter(
     (post) =>
       post.title.toLowerCase().includes(searchTerm) ||
-      post.content.toLowerCase().includes(searchTerm)
+      post.content.toLowerCase().includes(searchTerm) ||
+      post.writtenBy.toLowerCase().includes(searchTerm)
   );
+
   displayPosts(filteredPosts); // Re-render based on filtered data
 }
 
