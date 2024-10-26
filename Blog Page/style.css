@@ -9,6 +9,11 @@ html {
   scroll-behavior: smooth;
 }
 
+.highlight {
+  background-color: yellow; /* Or any color you prefer */
+  font-weight: bold;
+}
+
 body {
   background-color: #fae9df;
 }
@@ -32,6 +37,7 @@ nav {
   justify-items: center;
   list-style: none;
   width: 600px;
+  z-index: 100;
 }
 
 .hambuger-menu {

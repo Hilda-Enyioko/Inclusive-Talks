@@ -32,6 +32,7 @@ nav {
   justify-items: center;
   list-style: none;
   width: 600px;
+  z-index: 100;
 }
 
 .hambuger-menu {
