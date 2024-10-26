@@ -9,6 +9,16 @@ html {
   scroll-behavior: smooth;
 }
 
+.no-posts-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem; /* Adjust the size as needed */
+  height: 200px; /* Adjust the height for centering */
+  color: #555; /* Optional: Adjust the color */
+  font-weight: bold;
+}
+
 .highlight {
   background-color: yellow; /* Or any color you prefer */
   font-weight: bold;

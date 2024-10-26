@@ -21,7 +21,7 @@ function displayPosts(posts) {
   postsContainer.innerHTML = ""; // Clear previous content
 
   if (!posts.length) {
-    postsContainer.innerHTML = "<p>No posts found.</p>";
+    postsContainer.innerHTML = `<p class="no-posts-message">No posts found.</p>`;
     return;
   }
 
